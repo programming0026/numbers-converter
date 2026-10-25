@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: ./sbj-convert-numbers
+      dockerfile: Dockerfile
+    container_name: convert-numbers-backend
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./react-convert-numbers
+      dockerfile: Dockerfile
+      args:
+        VITE_API_URL: http://localhost:9090/api
+    container_name: convert-numbers-frontend
+    ports:
+      - "3002:3000"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

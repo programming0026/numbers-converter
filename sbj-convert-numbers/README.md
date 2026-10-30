@@ -64,7 +64,7 @@ Al convertir letras a número se ignoran mayúsculas y acentos (`TextUtils.norma
 ## Arquitectura
 
 ```
-com.work.converter
+com.juniverse.numbers
 ├── controller/   AbstractNumberConverterController, SpanishNumberController, EnglishNumberController
 ├── service/      NumberConverter (interfaz), Spanish/EnglishNumberConverter, NumberConverterFactory, LoggingService
 ├── dto/          Request/Response records por idioma, ErrorResponseDTO

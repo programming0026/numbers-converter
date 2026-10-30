@@ -8,7 +8,7 @@
         <version>3.5.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.work.converter</groupId>
+    <groupId>com.juniverse.numbers</groupId>
     <artifactId>sbj-convert-numbers</artifactId>
     <version>1.0.0</version>
     <name>sbj-convert-numbers</name>

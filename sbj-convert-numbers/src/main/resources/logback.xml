@@ -23,7 +23,7 @@
     </appender>
 
     <!-- Logger para la aplicación -->
-    <logger name="com.work.converter" level="INFO" additivity="false">
+    <logger name="com.juniverse.numbers" level="INFO" additivity="false">
         <appender-ref ref="Console" />
         <appender-ref ref="RollingFile" />
     </logger>

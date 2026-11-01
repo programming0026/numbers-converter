@@ -5,7 +5,7 @@ Está formada por dos proyectos independientes que se orquestan con Docker Compo
 
 | Proyecto | Descripción | Stack | Puerto |
 |----------|-------------|-------|--------|
-| [`sbj-convert-numbers`](./sbj-convert-numbers) | API REST con la lógica de conversión | Java 17, Spring Boot 3.5.4, Maven | `9090` |
+| [`sbj-convert-numbers`](./sbj-convert-numbers) | API REST con la lógica de conversión | Java 21, Spring Boot 4.0.1, Maven | `9090` |
 | [`react-convert-numbers`](./react-convert-numbers) | Interfaz web | React 19, TypeScript, Vite, Tailwind CSS | `3002` (host) → `3000` (contenedor) |
 
 ![Pantalla principal](docs/images/home.png)
@@ -96,7 +96,7 @@ flowchart TB
         B[Navegador]
         subgraph Docker["Docker Compose · app-network"]
             C1["convert-numbers-frontend<br/>node:alpine + serve<br/>3002→3000"]
-            C2["convert-numbers-backend<br/>Amazon Corretto 17<br/>9090→9090"]
+            C2["convert-numbers-backend<br/>Amazon Corretto 21<br/>9090→9090"]
         end
     end
     B -->|":3002"| C1

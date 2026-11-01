@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
 /**
- * The Class GlobalExceptionHandler.
- *
  * @author ajuar
  */
 @Hidden
@@ -21,11 +19,11 @@ import org.springframework.web.context.request.WebRequest;
 public class GlobalExceptionHandler {
 
     /**
-     * Handle validation exception.
+     * Procesa excepción de validación.
      *
-     * @param ex the ex
-     * @param request the request
-     * @return the response entity
+     * @param ex excepción
+     * @param request petición
+     * @return entidad de respuesta
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErrorResponseDTO> handleValidationException(
@@ -47,11 +45,11 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle service exception.
+     * Procesa excepción de servicio.
      *
-     * @param exception the exception
-     * @param request the request
-     * @return the response entity
+     * @param exception excepción
+     * @param request petición
+     * @return entidad de respuesta
      */
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<ErrorResponseDTO> handleServiceException(ServiceException exception, 
@@ -66,11 +64,11 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle HTTP message not readable exception.
+     * Procesa el error de cuerpo HTTP ilegible.
      *
-     * @param ex the ex
-     * @param request the request
-     * @return the response entity
+     * @param ex excepción
+     * @param request petición
+     * @return entidad de respuesta
      */
     @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
     public ResponseEntity<ErrorResponseDTO> handleHttpMessageNotReadable(
@@ -86,11 +84,11 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * Handle general unexpected exception.
+     * Procesa cualquier excepción inesperada.
      *
-     * @param ex the ex
-     * @param request the request
-     * @return the response entity
+     * @param ex excepción
+     * @param request petición
+     * @return entidad de respuesta
      */
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDTO> handleGeneralException(

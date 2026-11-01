@@ -9,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * The Class SpanishNumberConverterTest.
- * Unit tests for {@link SpanishNumberConverter}.
+ * Pruebas unitarias de {@link SpanishNumberConverter}.
  *
  * @author ajuar
  */
@@ -24,7 +23,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test language.
+     * Idioma del convertidor.
      */
     @Test
     void testLanguage() {
@@ -32,7 +31,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert zero.
+     * Convertir cero.
      */
     @Test
     void testToWordsZero() {
@@ -40,7 +39,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert units, teens and the irregular 20-29 range.
+     * Convertir unidades, los números del 10 al 19 y el rango irregular del 20 al 29.
      */
     @Test
     void testToWordsUnitsTeensAndTwenties() {
@@ -58,7 +57,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert tens from 30 upward.
+     * Convertir decenas desde el 30 en adelante.
      */
     @Test
     void testToWordsTens() {
@@ -69,7 +68,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert hundreds, including the irregular "cien".
+     * Convertir centenas, incluido el caso irregular «cien».
      */
     @Test
     void testToWordsHundreds() {
@@ -81,7 +80,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert thousands, including the apocope before "mil".
+     * Convertir miles, incluida la apócope antes de «mil».
      */
     @Test
     void testToWordsThousands() {
@@ -93,7 +92,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert millions, including the apocope before "millones".
+     * Convertir millones, incluida la apócope antes de «millones».
      */
     @Test
     void testToWordsMillions() {
@@ -104,7 +103,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert billions (long scale: billón = 10^12) and larger nested scales.
+     * Convertir billones (escala larga: billón = 10^12) y escalas mayores anidadas.
      */
     @Test
     void testToWordsBillions() {
@@ -114,7 +113,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test convert negative numbers.
+     * Convertir números negativos.
      */
     @Test
     void testToWordsNegative() {
@@ -123,7 +122,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test Long.MIN_VALUE is rejected instead of causing a stack overflow.
+     * Se rechaza Long.MIN_VALUE en lugar de provocar un desbordamiento de pila.
      */
     @Test
     void testToWordsLongMinValueThrows() {
@@ -131,7 +130,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test parsing words back into numbers, including accented input.
+     * Convertir palabras en números, incluso con acentos.
      */
     @Test
     void testToNumberBasic() {
@@ -145,7 +144,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test parsing feminine hundreds ("doscientas" instead of "doscientos").
+     * Interpretar centenas en femenino («doscientas» en lugar de «doscientos»).
      */
     @Test
     void testToNumberFeminineHundreds() {
@@ -153,7 +152,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test parsing negative words.
+     * Interpretar palabras negativas.
      */
     @Test
     void testToNumberNegative() {
@@ -161,7 +160,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test parsing is case-insensitive.
+     * La interpretación no distingue mayúsculas de minúsculas.
      */
     @Test
     void testToNumberIsCaseInsensitive() {
@@ -169,7 +168,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test blank text is rejected.
+     * Se rechaza el texto en blanco.
      */
     @Test
     void testToNumberBlankThrows() {
@@ -179,7 +178,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test unrecognized words are rejected.
+     * Se rechazan las palabras no reconocidas.
      */
     @Test
     void testToNumberUnrecognizedWordThrows() {
@@ -189,7 +188,7 @@ class SpanishNumberConverterTest {
     }
 
     /**
-     * Test toWords followed by toNumber returns the original value.
+     * Convertir a palabras y luego a número devuelve el valor original.
      */
     @Test
     void testRoundTrip() {

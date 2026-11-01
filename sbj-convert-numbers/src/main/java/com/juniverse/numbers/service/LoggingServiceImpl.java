@@ -8,8 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 
 /**
- * The Class LoggingServiceImpl.
- * Implementation of LoggingService for handling request and response logging.
+ * Implementación de LoggingService para registrar peticiones y respuestas.
  *
  * @author ajuar
  */
@@ -17,9 +16,9 @@ import org.springframework.util.StringUtils;
 public class LoggingServiceImpl implements LoggingService {
 
     /**
-     * Print log request and response.
+     * Imprime el registro de la petición y la respuesta.
      *
-     * @param data the request response data
+     * @param data datos de respuesta de petición
      */
     @Override
     public void printLogReqRes(RequestResponseDataDTO data) {
@@ -29,9 +28,9 @@ public class LoggingServiceImpl implements LoggingService {
     }
 
     /**
-     * Prints the log request.
+     * Imprime el registro de la petición.
      *
-     * @param data the request response data
+     * @param data datos de respuesta de petición
      */
     private void printLogRequest(RequestResponseDataDTO data) {
         if (!isNotLoggableURL(data.path())) {
@@ -51,9 +50,9 @@ public class LoggingServiceImpl implements LoggingService {
     }
 
     /**
-     * Prints the log response.
+     * Imprime el registro de la respuesta.
      *
-     * @param data the request response data
+     * @param data datos de respuesta de petición
      */
     private void printLogResponse(RequestResponseDataDTO data) {
         if (!isNotLoggableURL(data.path())) {
@@ -70,23 +69,11 @@ public class LoggingServiceImpl implements LoggingService {
         }
     }
 
-    /**
-     * Gets the url.
-     *
-     * @param req the req
-     * @return the url
-     */
     private String getUrl(RequestResponseDataDTO req) {
         return Stream.of(req.path(), req.query()).filter(StringUtils::hasText)
                 .collect(Collectors.joining("?"));
     }
 
-    /**
-     * Checks if is not loggable URL.
-     *
-     * @param requestURI the request URI
-     * @return true, if is not loggable URL
-     */
     private boolean isNotLoggableURL(final String requestURI) {
         if (!StringUtils.hasText(requestURI)) {
             return false;

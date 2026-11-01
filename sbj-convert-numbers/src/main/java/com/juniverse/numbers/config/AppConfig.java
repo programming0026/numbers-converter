@@ -6,15 +6,13 @@ import com.juniverse.numbers.service.LoggingService;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * The Class AppConfig.
- *
  * @author ajuar
  */
 @Configuration
 public class AppConfig {
 
     /**
-     * Loggin Service.
+     * Servicio de registro.
      *
      * @return LoggingService
      */

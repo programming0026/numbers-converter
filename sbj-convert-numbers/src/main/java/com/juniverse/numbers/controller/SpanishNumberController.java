@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The Class SpanishNumberController.
- * Exposes number/words conversion for Spanish, backed by the converter resolved
- * from {@link com.juniverse.numbers.service.NumberConverterFactory}.
+ * Expone la conversión entre números y palabras en español, con el convertidor obtenido
+ * de {@link com.juniverse.numbers.service.NumberConverterFactory}.
  *
  * @author ajuar
  */
@@ -30,18 +29,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/numbers/es")
 public class SpanishNumberController extends AbstractNumberConverterController {
 
-    /**
-     * Instantiates a new spanish number controller.
-     */
     public SpanishNumberController() {
         super(Language.ES);
     }
 
     /**
-     * Convert a number to Spanish words.
+     * Convierte un número a palabras en español.
      *
-     * @param request the request
-     * @return the response entity
+     * @param request petición
+     * @return entidad de respuesta
      */
     @PostMapping(path = "/convert", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Operation(summary = "convertNumberToWords", description = "Convert number to Spanish words")
@@ -62,10 +58,10 @@ public class SpanishNumberController extends AbstractNumberConverterController {
     }
 
     /**
-     * Convert Spanish words to a number.
+     * Convierte palabras en español a número.
      *
-     * @param request the request
-     * @return the response entity
+     * @param request petición
+     * @return entidad de respuesta
      */
     @PostMapping(path = "/to-number", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Operation(summary = "convertWordsToNumber", description = "Convert Spanish words to number")

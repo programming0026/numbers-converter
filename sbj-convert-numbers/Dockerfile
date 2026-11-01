@@ -1,4 +1,4 @@
-FROM maven:3.9.7-amazoncorretto-17-al2023 AS build
+FROM maven:3.9.7-amazoncorretto-21-al2023 AS build
 WORKDIR /app
 RUN --mount=type=bind,source=pom.xml,target=pom.xml,readonly \
     --mount=type=bind,source=src,target=src,readonly \
@@ -6,7 +6,7 @@ RUN --mount=type=bind,source=pom.xml,target=pom.xml,readonly \
     mvn dependency:go-offline && \
     mvn clean package -Dmaven.test.skip=true
 
-FROM amazoncorretto:17.0.16-alpine3.22
+FROM amazoncorretto:21.0.11-al2023
 ENV TZ=America/Mexico_City
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 COPY --from=build /app/target/*.jar /workspace/app.jar

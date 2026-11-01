@@ -1,12 +1,12 @@
 package com.juniverse.numbers.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 import com.juniverse.numbers.dto.EnglishNumberRequestDTO;
 import com.juniverse.numbers.dto.EnglishWordsRequestDTO;
 import com.juniverse.numbers.util.Constants;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -17,8 +17,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
- * The Class EnglishNumberControllerTest.
- * Integration tests for {@link EnglishNumberController}.
+ * Pruebas de integración de {@link EnglishNumberController}.
  *
  * @author ajuar
  */
@@ -33,9 +32,9 @@ class EnglishNumberControllerTest {
     private ObjectMapper objectMapper;
 
     /**
-     * Test convert number to words successfully.
+     * Convertir número a palabras correctamente.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsSuccess() throws Exception {
@@ -51,9 +50,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test convert negative number to words successfully.
+     * Convertir un número negativo a palabras correctamente.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsNegativeSuccess() throws Exception {
@@ -67,9 +66,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test a null number is rejected by bean validation.
+     * La validación rechaza un número nulo.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsNullNumberReturnsValidationError() throws Exception {
@@ -82,9 +81,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test a number below the allowed lower bound is rejected.
+     * Se rechaza un número menor al límite inferior permitido.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsBelowMinimumReturnsValidationError() throws Exception {
@@ -100,9 +99,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test Long.MAX_VALUE, the upper bound, is accepted.
+     * Se acepta Long.MAX_VALUE, el límite superior.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsMaxBoundaryAccepted() throws Exception {
@@ -116,9 +115,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test an invalid JSON payload returns a unified bad request error.
+     * Un JSON inválido devuelve un error de petición incorrecta unificado.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertNumberToWordsInvalidFormatReturnsBadRequest() throws Exception {
@@ -130,9 +129,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test convert words to a number successfully.
+     * Convertir palabras a número correctamente.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberSuccess() throws Exception {
@@ -146,9 +145,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test convert negative words to a number successfully.
+     * Convertir palabras negativas a número correctamente.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberNegativeSuccess() throws Exception {
@@ -162,9 +161,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test blank text is rejected by bean validation.
+     * La validación rechaza el texto en blanco.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberBlankReturnsValidationError() throws Exception {
@@ -178,9 +177,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test text containing characters outside the allowed pattern is rejected.
+     * Se rechaza el texto con caracteres fuera del patrón permitido.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberInvalidCharactersReturnsValidationError() throws Exception {
@@ -196,9 +195,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test text exceeding the maximum length is rejected.
+     * Se rechaza el texto que excede la longitud máxima.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberTooLongReturnsValidationError() throws Exception {
@@ -213,9 +212,9 @@ class EnglishNumberControllerTest {
     }
 
     /**
-     * Test a syntactically valid but unrecognized word is rejected by the service layer.
+     * La capa de servicio rechaza una palabra válida pero no reconocida.
      *
-     * @throws Exception the exception
+     * @throws Exception si ocurre un error
      */
     @Test
     void testConvertWordsToNumberUnrecognizedWordReturnsBadRequest() throws Exception {

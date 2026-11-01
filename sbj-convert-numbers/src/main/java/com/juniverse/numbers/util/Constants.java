@@ -3,15 +3,10 @@ package com.juniverse.numbers.util;
 import java.util.Map;
 
 /**
- * The Class Constants.
- *
  * @author linux
  */
 public final class Constants {
 
-    /**
-     * Instantiates a new constants.
-     */
     private Constants() {
 
     }
@@ -58,12 +53,12 @@ public final class Constants {
     );
 
     /**
-     * Email Swagger.
+     * Correo de contacto en Swagger.
      */
-    public static final String SWAGGER_EMAIL = "programacion0025@gmail.com";
+    public static final String SWAGGER_EMAIL = "programacion0026@gmail.com";
 
     /**
-     * Descripcion Swagger.
+     * Descripción de Swagger.
      */
     public static final String SWAGGER_DESCRIPTION = "Application to convert numbers to words";
 
@@ -73,17 +68,11 @@ public final class Constants {
     public static final String SWAGGER_NAME = "AJO";
 
     /**
-     * Url Swagger.
+     * URL de Swagger.
      */
-    public static final String SWAGGER_URL = "https://github.com/AJuarez0021";
+    public static final String SWAGGER_URL = "https://github.com/programming0026";
 
-    /**
-     * The Constant HEADER_TRANSACTION_ID_KEY.
-     */
     public static final String HEADER_TRANSACTION_ID_KEY = "transaction-id";
 
-    /**
-     * The Constant TRACE_TX.
-     */
     public static final String TRACE_TX = "TRACE_TX";
 }

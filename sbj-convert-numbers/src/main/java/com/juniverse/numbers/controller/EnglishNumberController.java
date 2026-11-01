@@ -20,9 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * The Class EnglishNumberController.
- * Exposes number/words conversion for English, backed by the converter resolved
- * from {@link com.juniverse.numbers.service.NumberConverterFactory}.
+ * Expone la conversión entre números y palabras en inglés, con el convertidor obtenido
+ * de {@link com.juniverse.numbers.service.NumberConverterFactory}.
  *
  * @author ajuar
  */
@@ -30,18 +29,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/v1/numbers/en")
 public class EnglishNumberController extends AbstractNumberConverterController {
 
-    /**
-     * Instantiates a new english number controller.
-     */
     public EnglishNumberController() {
         super(Language.EN);
     }
 
     /**
-     * Convert a number to English words.
+     * Convierte un número a palabras en inglés.
      *
-     * @param request the request
-     * @return the response entity
+     * @param request petición
+     * @return entidad de respuesta
      */
     @PostMapping(path = "/convert", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Operation(summary = "convertNumberToWords", description = "Convert number to English words")
@@ -62,10 +58,10 @@ public class EnglishNumberController extends AbstractNumberConverterController {
     }
 
     /**
-     * Convert English words to a number.
+     * Convierte palabras en inglés a número.
      *
-     * @param request the request
-     * @return the response entity
+     * @param request petición
+     * @return entidad de respuesta
      */
     @PostMapping(path = "/to-number", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Operation(summary = "convertWordsToNumber", description = "Convert English words to number")

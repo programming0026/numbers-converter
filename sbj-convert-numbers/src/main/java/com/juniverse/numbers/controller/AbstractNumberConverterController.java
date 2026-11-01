@@ -15,11 +15,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 /**
- * The Class AbstractNumberConverterController.
- * Base controller that provides the two operations offered by {@link NumberConverter}
- * (obtained through {@link NumberConverterFactory}) for a fixed language. Subclasses
- * expose the actual endpoints using a request DTO validated with annotations specific
- * to their language.
+ * Controlador base que ofrece las dos operaciones de {@link NumberConverter}
+ * (obtenido mediante {@link NumberConverterFactory}) para un idioma fijo. Las subclases
+ * exponen los endpoints reales con un DTO de petición validado con anotaciones propias
+ * a su idioma.
  *
  * @author ajuar
  */
@@ -27,24 +26,19 @@ import org.springframework.http.ResponseEntity;
 public abstract class AbstractNumberConverterController {
 
     /**
-     * The number converter resolved from the factory for this controller's language.
+     * Convertidor obtenido de la fábrica para el idioma de este controlador.
      */
     private final NumberConverter numberConverter;
 
-    /**
-     * Instantiates a new abstract number converter controller.
-     *
-     * @param language the language handled by this controller
-     */
     protected AbstractNumberConverterController(Language language) {
         this.numberConverter = NumberConverterFactory.of(language);
     }
 
     /**
-     * Convert a number to words.
+     * Convierte un número a palabras.
      *
-     * @param number the number
-     * @return the response entity
+     * @param number número
+     * @return entidad de respuesta
      */
     protected ResponseEntity<NumberResponseDTO> convertNumberToWords(Long number) {
         try {
@@ -63,10 +57,10 @@ public abstract class AbstractNumberConverterController {
     }
 
     /**
-     * Convert words to a number.
+     * Convierte palabras a número.
      *
-     * @param text the text
-     * @return the response entity
+     * @param text texto
+     * @return entidad de respuesta
      */
     protected ResponseEntity<WordsResponseDTO> convertWordsToNumber(String text) {
         try {

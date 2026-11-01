@@ -21,7 +21,7 @@ import org.springframework.context.annotation.PropertySource;
 public class SwaggerConfig {
 
     /**
-     * Configuracion Swagger.
+     * Configuración de Swagger.
      */
     private final ConfigSwaggerDTO config;
 
@@ -30,20 +30,15 @@ public class SwaggerConfig {
     }
 
     /**
-     * Open API.
+     * Configuración de OpenAPI.
      *
-     * @return the open API
+     * @return configuración de OpenAPI
      */
     @Bean
     OpenAPI openAPI() {
         return new OpenAPI().info(getInfo()).addServersItem(new Server().url(config.getPath()));
     }
 
-    /**
-     * Gets the info.
-     *
-     * @return the info
-     */
     private Info getInfo() {
         Info info = new Info();
         info.setTitle(config.getApplication());
@@ -54,9 +49,9 @@ public class SwaggerConfig {
     }
 
     /**
-     * Gets the contact.
+     * Obtiene los datos de contacto.
      *
-     * @return the contact
+     * @return datos de contacto
      */
     private Contact getContact() {
         return new Contact().name(Constants.SWAGGER_NAME)

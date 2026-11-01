@@ -6,8 +6,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * The Class FilterConfig.
- * Configuration class for registering web interceptors.
+ * Configuración que registra los interceptores web.
  *
  * @author ajuar
  */
@@ -15,23 +14,18 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class FilterConfig implements WebMvcConfigurer {
 
     /**
-     * The txInterceptor.
+     * Interceptor de identificadores de transacción.
      */
     private final TransactionInterceptor txInterceptor;
 
-    /**
-     * Instantiates a new filter config.
-     *
-     * @param txInterceptor the transaction interceptor
-     */
     public FilterConfig(TransactionInterceptor txInterceptor) {
         this.txInterceptor = txInterceptor;
     }
 
     /**
-     * Adds the interceptors.
+     * Registra los interceptores.
      *
-     * @param registry the registry
+     * @param registry registro de interceptores o de CORS
      */
     @Override
     public void addInterceptors(InterceptorRegistry registry) {

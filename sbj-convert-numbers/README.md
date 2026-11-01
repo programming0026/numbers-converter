@@ -6,7 +6,7 @@ Microservicio REST (Spring Boot) que convierte números a su representación en 
 
 ## Stack
 
-- Java 17 (Amazon Corretto), Spring Boot 3.5.4, Maven
+- Java 21 (Amazon Corretto), Spring Boot 4.0.1, Maven
 - Bean Validation, Lombok, springdoc-openapi (Swagger UI)
 - Checkstyle y JaCoCo (cobertura mínima de complejidad: 75 %)
 
@@ -172,10 +172,5 @@ docker run --network=services-net --name=sbj-convert-numbers -d -p 9090:9090 sbj
 docker rm -f sbj-convert-numbers      # eliminar
 ```
 
-La imagen usa build multi-etapa (Maven → Corretto 17 Alpine) y arranca con `run.sh`, que aplica opciones de
+La imagen usa build multi-etapa (Maven → Corretto 21) y arranca con `run.sh`, que aplica opciones de
 seguridad (`java.security.egd`) y de Netty.
-
-## Documentación adicional
-
-- [`CLAUDE.md`](./CLAUDE.md) – guía del proyecto
-- [`ANALISIS_CODIGO.md`](./ANALISIS_CODIGO.md), [`BUGS_ACTUALES.md`](./BUGS_ACTUALES.md), [`bugs.md`](./bugs.md)

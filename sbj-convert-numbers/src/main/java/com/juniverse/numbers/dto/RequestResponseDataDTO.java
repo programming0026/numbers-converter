@@ -3,19 +3,18 @@ package com.juniverse.numbers.dto;
 import java.util.Map;
 
 /**
- * The Record RequestResponseDataDTO.
- * Data transfer object for request and response logging information.
+ * Objeto de transferencia con la información de la petición y la respuesta que se registra.
  *
  * @author ajuar
- * @param method the HTTP method
- * @param path the request path
- * @param query the query string
- * @param requestHeaders the request headers
- * @param requestBody the request body
- * @param status the response status code
- * @param responseHeaders the response headers
- * @param responseBody the response body
- * @param remoteAddr the remote address
+ * @param method método de HTTP
+ * @param path ruta de la petición
+ * @param query cadena de consulta
+ * @param requestHeaders encabezados de petición
+ * @param requestBody cuerpo de petición
+ * @param status código de estado de respuesta
+ * @param responseHeaders encabezados de respuesta
+ * @param responseBody cuerpo de respuesta
+ * @param remoteAddr dirección remota
  */
 public record RequestResponseDataDTO(
         String method,

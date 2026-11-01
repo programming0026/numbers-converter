@@ -11,8 +11,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 /**
- * The Class TransactionInterceptor.
- * Interceptor for handling transaction IDs in HTTP requests.
+ * Interceptor que gestiona los identificadores de transacción en las peticiones HTTP.
  *
  * @author ajuar
  */
@@ -21,13 +20,13 @@ import org.springframework.web.servlet.HandlerInterceptor;
 public class TransactionInterceptor implements HandlerInterceptor {
 
     /**
-     * Pre handle.
+     * Se ejecuta antes del controlador: asigna el identificador de transacción.
      *
-     * @param request the request
-     * @param response the response
-     * @param handler the handler
-     * @return true, if successful
-     * @throws Exception the exception
+     * @param request petición
+     * @param response respuesta
+     * @param handler manejador
+     * @return {@code true} si la operación tuvo éxito
+     * @throws Exception si ocurre un error
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
@@ -44,14 +43,14 @@ public class TransactionInterceptor implements HandlerInterceptor {
     }
 
     /**
-     * After completion.
-     * Cleans up the MDC context after request completion.
+     * Se ejecuta al completar la petición.
+     * Limpia el contexto MDC al terminar la petición.
      *
-     * @param request the request
-     * @param response the response
-     * @param handler the handler
-     * @param ex the exception
-     * @throws Exception the exception
+     * @param request petición
+     * @param response respuesta
+     * @param handler manejador
+     * @param ex excepción
+     * @throws Exception si ocurre un error
      */
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response,

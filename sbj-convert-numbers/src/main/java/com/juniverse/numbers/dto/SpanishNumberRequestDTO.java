@@ -5,12 +5,11 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * The Record SpanishNumberRequestDTO.
- * Bounds are capped at 999,999,999,999,999 (999 mil billones) so the "billón"
- * multiplier stays below 1,000 and the resulting words stay unambiguous.
+ * Los límites se fijan en 999,999,999,999,999 (999 mil billones) para que el multiplicador «billón»
+ * multiplicador se mantenga por debajo de 1,000 y las palabras resultantes no sean ambiguas.
  *
  * @author ajuar
- * @param number the number
+ * @param number número
  */
 public record SpanishNumberRequestDTO(
         @NotNull(message = "El número no puede ser nulo")

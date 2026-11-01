@@ -5,10 +5,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 /**
- * The Record SpanishWordsRequestDTO.
- *
  * @author ajuar
- * @param text the quantity written in Spanish words, e.g. "dos mil quinientos"
  */
 public record SpanishWordsRequestDTO(
         @NotBlank(message = "El texto no puede estar vacío")

@@ -30,8 +30,6 @@ import jakarta.annotation.PreDestroy;
 import org.slf4j.MDC;
 
 /**
- * The Class LoggingFilter.
- *
  * @author ajuar
  */
 @Component
@@ -40,13 +38,16 @@ import org.slf4j.MDC;
 public class LoggingFilter implements Filter {
 
     /**
-     * Maximum number of pending log tasks allowed before new ones are discarded.
+     * Cantidad máxima de tareas de registro pendientes antes de descartar las nuevas.
      */
     private static final int LOG_QUEUE_CAPACITY = 500;
 
+    /** Bytes máximos del cuerpo de la petición que se guardan en memoria para el registro (Spring 7 exige un límite). */
+    private static final int MAX_PAYLOAD_BYTES = 64 * 1024;
+
     /**
-     * The executor with a bounded thread pool and a bounded queue, sustained traffic burst
-     * discards new log tasks instead of growing memory without limit.
+     * Ejecutor con un grupo de hilos y una cola acotados: ante una ráfaga sostenida de tráfico
+     * descarta tareas de registro nuevas en lugar de crecer la memoria sin límite.
      */
     private final ExecutorService executor = new ThreadPoolExecutor(
             10, 10, 0L, TimeUnit.MILLISECONDS,
@@ -55,34 +56,29 @@ public class LoggingFilter implements Filter {
                     LOG_QUEUE_CAPACITY));
 
     /**
-     * The loggingService.
+     * Servicio de registro.
      */
     private final LoggingService loggingService;
 
-    /**
-     * Instantiates a new logging filter.
-     *
-     * @param loggingService the logging service
-     */
     public LoggingFilter(LoggingService loggingService) {
         this.loggingService = loggingService;
     }
 
     /**
-     * Do filter.
+     * Filtra la petición, registra la entrada y la salida.
      *
-     * @param request the request
-     * @param response the response
-     * @param chain the chain
-     * @throws IOException the IO exception
-     * @throws ServletException the servlet exception
+     * @param request petición
+     * @param response respuesta
+     * @param chain cadena de filtros
+     * @throws IOException si ocurre un error de entrada/salida
+     * @throws ServletException si falla el procesamiento del servlet
      */
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
         ContentCachingRequestWrapper requestWrapper
-                = new ContentCachingRequestWrapper((HttpServletRequest) request);
+                = new ContentCachingRequestWrapper((HttpServletRequest) request, MAX_PAYLOAD_BYTES);
         ContentCachingResponseWrapper responseWrapper
                 = new ContentCachingResponseWrapper((HttpServletResponse) response);
 
@@ -101,9 +97,9 @@ public class LoggingFilter implements Filter {
     }
 
     /**
-     * Print log asynchronously.
+     * Imprime el registro de forma asíncrona.
      *
-     * @param data the request response data
+     * @param data datos de respuesta de petición
      */
     private void printLog(RequestResponseDataDTO data) {
 
@@ -131,7 +127,7 @@ public class LoggingFilter implements Filter {
     }
 
     /**
-     * Shutdown executor when component is destroyed.
+     * Detiene el ejecutor al destruirse el componente.
      */
     @PreDestroy
     public void shutdown() {
@@ -139,12 +135,12 @@ public class LoggingFilter implements Filter {
     }
 
     /**
-     * Create data DTO from request and response wrappers.
+     * Crea el DTO con los datos de los envoltorios de petición y respuesta.
      *
-     * @param requestWrapper the request wrapper
-     * @param responseWrapper the response wrapper
-     * @return the request response data DTO
-     * @throws UnsupportedEncodingException the unsupported encoding exception
+     * @param requestWrapper envoltorio de la petición
+     * @param responseWrapper envoltorio de la respuesta
+     * @return DTO de datos de respuesta de petición
+     * @throws UnsupportedEncodingException si la codificación no es soportada
      */
     private RequestResponseDataDTO createData(ContentCachingRequestWrapper requestWrapper,
             ContentCachingResponseWrapper responseWrapper) throws UnsupportedEncodingException {
@@ -168,12 +164,6 @@ public class LoggingFilter implements Filter {
         );
     }
 
-    /**
-     * Gets the headers.
-     *
-     * @param res the res
-     * @return the headers
-     */
     private Map<String, String> getHeaders(ContentCachingResponseWrapper res) {
         return res.getHeaderNames().stream()
                 .distinct()
@@ -182,12 +172,6 @@ public class LoggingFilter implements Filter {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1, v2) -> v1));
     }
 
-    /**
-     * Gets the headers.
-     *
-     * @param req the req
-     * @return the headers
-     */
     private Map<String, String> getHeaders(ContentCachingRequestWrapper req) {
         return Collections.list(req.getHeaderNames()).stream()
                 .distinct()

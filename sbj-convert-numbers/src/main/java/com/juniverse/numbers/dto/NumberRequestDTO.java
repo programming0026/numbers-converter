@@ -5,10 +5,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * The Record NumberRequestDTO.
- *
  * @author ajuar
- * @param number the number
  */
 public record NumberRequestDTO(
         @NotNull(message = "El número no puede ser nulo")

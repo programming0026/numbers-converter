@@ -16,7 +16,7 @@ public class EnglishNumberConverter implements NumberConverter {
             "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
     };
 
-    /** Scales in descending order; must stay aligned with SCALE_NAMES. */
+    /** Escalas en orden descendente; deben mantenerse alineadas con SCALE_NAMES. */
     private static final long[] SCALE_VALUES = {
             1_000_000_000_000_000_000L, 1_000_000_000_000_000L, 1_000_000_000_000L,
             1_000_000_000L, 1_000_000L, 1_000L

@@ -9,8 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
- * The Class EnglishNumberConverterTest.
- * Unit tests for {@link EnglishNumberConverter}.
+ * Pruebas unitarias de {@link EnglishNumberConverter}.
  *
  * @author ajuar
  */
@@ -24,7 +23,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test language.
+     * Idioma del convertidor.
      */
     @Test
     void testLanguage() {
@@ -32,7 +31,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert zero.
+     * Convertir cero.
      */
     @Test
     void testToWordsZero() {
@@ -40,7 +39,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert units and teens.
+     * Convertir unidades y los números del 10 al 19.
      */
     @Test
     void testToWordsUnitsAndTeens() {
@@ -53,7 +52,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert tens.
+     * Convertir decenas.
      */
     @Test
     void testToWordsTens() {
@@ -64,7 +63,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert hundreds.
+     * Convertir centenas.
      */
     @Test
     void testToWordsHundreds() {
@@ -75,7 +74,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert thousands.
+     * Convertir miles.
      */
     @Test
     void testToWordsThousands() {
@@ -85,7 +84,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert millions.
+     * Convertir millones.
      */
     @Test
     void testToWordsMillions() {
@@ -95,7 +94,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert billions, trillions, quadrillions and quintillions (short scale).
+     * Convertir billones, trillones, cuatrillones y quintillones (escala corta).
      */
     @Test
     void testToWordsLargeScales() {
@@ -106,7 +105,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test convert negative numbers.
+     * Convertir números negativos.
      */
     @Test
     void testToWordsNegative() {
@@ -115,7 +114,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test Long.MIN_VALUE is rejected instead of causing a stack overflow.
+     * Se rechaza Long.MIN_VALUE en lugar de provocar un desbordamiento de pila.
      */
     @Test
     void testToWordsLongMinValueThrows() {
@@ -123,7 +122,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test parsing words back into numbers.
+     * Convertir palabras de nuevo en números.
      */
     @Test
     void testToNumberBasic() {
@@ -135,7 +134,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test parsing negative words.
+     * Interpretar palabras negativas.
      */
     @Test
     void testToNumberNegative() {
@@ -144,7 +143,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test parsing is case-insensitive.
+     * La interpretación no distingue mayúsculas de minúsculas.
      */
     @Test
     void testToNumberIsCaseInsensitive() {
@@ -152,7 +151,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test blank text is rejected.
+     * Se rechaza el texto en blanco.
      */
     @Test
     void testToNumberBlankThrows() {
@@ -162,7 +161,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test unrecognized words are rejected.
+     * Se rechazan las palabras no reconocidas.
      */
     @Test
     void testToNumberUnrecognizedWordThrows() {
@@ -172,7 +171,7 @@ class EnglishNumberConverterTest {
     }
 
     /**
-     * Test toWords followed by toNumber returns the original value.
+     * Convertir a palabras y luego a número devuelve el valor original.
      */
     @Test
     void testRoundTrip() {

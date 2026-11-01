@@ -4,21 +4,19 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * The Class ConfigSwaggerDTO.
- *
  * @author linux
  */
 @ConfigurationProperties(prefix = "swagger")
 @Data
 public class ConfigSwaggerDTO {
-	/** The title. */
+	/** Título. */
 	private String application;
 
-	/** The version. */
+	/** Versión. */
 	private String version;
 
 	/**
-	 * The path.
+	 * Ruta.
 	 */
 	private String path;
 

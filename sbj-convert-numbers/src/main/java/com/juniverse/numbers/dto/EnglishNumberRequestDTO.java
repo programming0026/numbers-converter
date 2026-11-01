@@ -5,12 +5,11 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * The Record EnglishNumberRequestDTO.
- * Bounds match the full range the English converter can name unambiguously
- * (up to {@link Long#MAX_VALUE}, since that stays below 1,000 quintillion).
+ * Los límites cubren todo el rango que el convertidor en inglés puede nombrar sin ambigüedad
+ * (hasta {@link Long#MAX_VALUE}, que se mantiene por debajo de 1,000 quintillones).
  *
  * @author ajuar
- * @param number the number
+ * @param number número
  */
 public record EnglishNumberRequestDTO(
         @NotNull(message = "The number cannot be null")

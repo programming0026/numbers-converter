@@ -5,10 +5,7 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 /**
- * The Record EnglishWordsRequestDTO.
- *
  * @author ajuar
- * @param text the quantity written in English words, e.g. "two thousand five hundred"
  */
 public record EnglishWordsRequestDTO(
         @NotBlank(message = "The text cannot be empty")

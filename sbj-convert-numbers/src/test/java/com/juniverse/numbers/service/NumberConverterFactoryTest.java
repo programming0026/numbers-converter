@@ -10,15 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * The Class NumberConverterFactoryTest.
- * Unit tests for {@link NumberConverterFactory}.
+ * Pruebas unitarias de {@link NumberConverterFactory}.
  *
  * @author ajuar
  */
 class NumberConverterFactoryTest {
 
     /**
-     * Test resolving the Spanish converter by language.
+     * Obtener el convertidor en español por idioma.
      */
     @Test
     void testOfLanguageSpanish() {
@@ -28,7 +27,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test resolving the English converter by language.
+     * Obtener el convertidor en inglés por idioma.
      */
     @Test
     void testOfLanguageEnglish() {
@@ -38,7 +37,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test the factory returns the same shared instance on every call.
+     * La fábrica devuelve la misma instancia compartida en cada llamada.
      */
     @Test
     void testOfLanguageReturnsSameInstance() {
@@ -47,7 +46,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test a null language is rejected.
+     * Se rechaza un idioma nulo.
      */
     @Test
     void testOfNullLanguageThrows() {
@@ -55,7 +54,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test resolving a converter from a Locale.
+     * Obtener un convertidor a partir de un Locale.
      */
     @Test
     void testOfLocale() {
@@ -64,7 +63,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test a null Locale is rejected.
+     * Se rechaza un Locale nulo.
      */
     @Test
     void testOfNullLocaleThrows() {
@@ -72,7 +71,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test a Locale for an unsupported language is rejected.
+     * Se rechaza un Locale de un idioma no soportado.
      */
     @Test
     void testOfUnsupportedLocaleThrows() {
@@ -80,7 +79,7 @@ class NumberConverterFactoryTest {
     }
 
     /**
-     * Test resolving a converter from a language tag.
+     * Obtener un convertidor a partir de una etiqueta de idioma.
      */
     @Test
     void testOfLanguageTag() {

@@ -55,7 +55,7 @@ public final class Constants {
     /**
      * Correo de contacto en Swagger.
      */
-    public static final String SWAGGER_EMAIL = "programacion0026@gmail.com";
+    public static final String SWAGGER_EMAIL = "contacto@javauniverse.dev";
 
     /**
      * Descripción de Swagger.

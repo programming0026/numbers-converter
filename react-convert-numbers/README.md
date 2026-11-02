@@ -23,7 +23,7 @@ Consume la API de [`sbj-convert-numbers`](../sbj-convert-numbers).
 
 ## Stack
 
-React 19 · TypeScript · Vite · Tailwind CSS 3 · lucide-react · ESLint
+React 19 · TypeScript · Vite · Tailwind CSS 4 · lucide-react · ESLint
 
 ## Configuración
 

@@ -274,18 +274,18 @@ const ConvertNumberToWords = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50">
       {/* Header con efectos visuales */}
-      <div className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600">
+      <div className="relative overflow-hidden bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600">
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-y-1"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/5 to-transparent transform -skew-y-1"></div>
         <div className="relative max-w-4xl mx-auto px-6 py-16 text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-xs rounded-full mb-6">
             <Calculator className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 tracking-tight">
             {texto.heroTitle}
-            <span className="block bg-gradient-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
+            <span className="block bg-linear-to-r from-yellow-200 to-orange-200 bg-clip-text text-transparent">
               {texto.heroHighlight}
             </span>
           </h1>
@@ -297,7 +297,7 @@ const ConvertNumberToWords = () => {
 
       {/* Contenido principal */}
       <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="bg-white/80 backdrop-blur-sm rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
+        <div className="bg-white/80 backdrop-blur-xs rounded-3xl shadow-2xl border border-white/20 overflow-hidden">
           <div className="p-8 md:p-12">
 
             {/* Selectores de idioma y modo */}
@@ -376,7 +376,7 @@ const ConvertNumberToWords = () => {
                   value={entrada}
                   onChange={handleEntradaChange}
                   placeholder={modo === 'toWords' ? texto.placeholder : texto.wordsPlaceholder}
-                  className="w-full px-6 py-4 text-2xl font-medium bg-gray-50 border-2 border-gray-200 rounded-2xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:bg-white transition-all duration-300 outline-none"
+                  className="w-full px-6 py-4 text-2xl font-medium bg-gray-50 border-2 border-gray-200 rounded-2xl focus:border-indigo-500 focus:ring-4 focus:ring-indigo-200 focus:bg-white transition-all duration-300 outline-hidden"
                   maxLength={modo === 'toWords' ? maxDigits + 1 : WORDS_MAX_LENGTH}
                 />
                 <div className="absolute inset-y-0 right-0 flex items-center pr-6">
@@ -412,7 +412,7 @@ const ConvertNumberToWords = () => {
                     )}
                   </button>
                 </div>
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl p-6">
+                <div className="bg-linear-to-r from-indigo-50 to-purple-50 border-2 border-indigo-200 rounded-2xl p-6">
                   <p
                     className={`text-xl md:text-2xl font-medium text-gray-800 leading-relaxed ${
                       modo === 'toWords' ? 'capitalize' : ''
@@ -444,7 +444,7 @@ const ConvertNumberToWords = () => {
             <div
               key={index}
               onClick={() => handleEjemploClick(ejemplo)}
-              className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-white/30 hover:bg-white/80 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+              className="bg-white/60 backdrop-blur-xs rounded-2xl p-6 border border-white/30 hover:bg-white/80 hover:shadow-lg transition-all duration-300 cursor-pointer group"
             >
               <div className="text-center">
                 <div className="text-2xl font-bold text-indigo-600 mb-2 group-hover:scale-110 transition-transform duration-200">
@@ -459,7 +459,7 @@ const ConvertNumberToWords = () => {
         </div>
 
         {/* Información adicional */}
-        <div className="mt-12 bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/30">
+        <div className="mt-12 bg-white/60 backdrop-blur-xs rounded-2xl p-8 border border-white/30">
           <h3 className="text-xl font-bold text-gray-800 mb-4 text-center">
             {texto.howTitle}
           </h3>

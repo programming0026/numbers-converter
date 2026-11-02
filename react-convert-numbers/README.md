@@ -67,7 +67,7 @@ docker rm -f react-convert-numbers  # eliminar
 > `VITE_API_URL` se lee en tiempo de compilación; pásala con `--build-arg`. Un `--env-file` en `docker run`
 > no afecta al bundle ya generado.
 
-La imagen es multi-etapa: `node:alpine` compila con Vite y sirve `dist/` con `serve` en el puerto 3000.
+La imagen es multi-etapa: `node:26.13.0-alpine` compila con Vite y `nginx:1.30-alpine` sirve `dist/` en el puerto 3000. El contenedor expone `GET /health` (responde `200 ok`) y el `docker-compose.yml` lo usa como `healthcheck`.
 
 ## Arquitectura
 

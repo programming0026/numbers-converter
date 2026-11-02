@@ -1,13 +1,11 @@
-FROM node:26.13.0-alpine AS builder
+FROM node:26.13.0-alpine AS build
 WORKDIR /app
-COPY package*.json ./
-RUN --mount=type=cache,target=/root/.npm npm install
+COPY package.json package-lock.json ./
+RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:26.13.0-alpine
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-RUN npm install -g serve
+FROM nginx:1.30-alpine
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 3000
-CMD ["serve", "-s", "dist"]

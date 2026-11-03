@@ -6,6 +6,7 @@ import java.util.Locale;
 import java.util.Map;
 
 public final class NumberConverterFactory {
+    /** Un conversor por idioma; son inmutables, así que se comparten. */
     private static final Map<Language, NumberConverter> INSTANCES = new EnumMap<>(Language.class);
 
     static {
@@ -16,7 +17,13 @@ public final class NumberConverterFactory {
     private NumberConverterFactory() {
     }
 
-    /** Devuelve el conversor del idioma indicado. */
+    /**
+     * Devuelve el conversor del idioma indicado.
+     *
+     * @param language idioma
+     * @return el conversor de ese idioma
+     * @throws IllegalArgumentException si el idioma es nulo o no tiene implementación
+     */
     public static NumberConverter of(Language language) {
         if (language == null) {
             throw new IllegalArgumentException("El idioma no puede ser null");
@@ -28,12 +35,22 @@ public final class NumberConverterFactory {
         return converter;
     }
 
-    /** Devuelve el conversor resolviendo el idioma desde un Locale. */
+    /**
+     * Devuelve el conversor resolviendo el idioma desde un Locale.
+     *
+     * @param locale configuración regional
+     * @return el conversor de su idioma
+     */
     public static NumberConverter of(Locale locale) {
         return of(Language.from(locale));
     }
 
-    /** Devuelve el conversor a partir del código de idioma ("es", "en"). */
+    /**
+     * Devuelve el conversor a partir del código de idioma ("es", "en").
+     *
+     * @param languageTag código de idioma (BCP 47)
+     * @return el conversor de ese idioma
+     */
     public static NumberConverter of(String languageTag) {
         return of(Locale.forLanguageTag(languageTag));
     }

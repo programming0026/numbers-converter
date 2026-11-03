@@ -72,7 +72,9 @@ public final class Constants {
      */
     public static final String SWAGGER_URL = "https://github.com/programming0026";
 
+    /** Cabecera HTTP con el identificador de la transacción. */
     public static final String HEADER_TRANSACTION_ID_KEY = "transaction-id";
 
+    /** Clave del MDC con el identificador de la transacción en los registros. */
     public static final String TRACE_TX = "TRACE_TX";
 }

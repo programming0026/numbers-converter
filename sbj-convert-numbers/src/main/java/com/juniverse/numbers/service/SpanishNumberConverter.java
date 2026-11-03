@@ -6,8 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SpanishNumberConverter implements NumberConverter {
+    /** Mil. */
     private static final long THOUSAND = 1_000L;
+    /** Un millón. */
     private static final long MILLION = 1_000_000L;
+    /** Un billón (escala larga: 10^12). */
     private static final long BILLION = 1_000_000_000_000L;
 
     /** Formas irregulares del 0 al 29, que en español son una sola palabra. */
@@ -18,10 +21,12 @@ public class SpanishNumberConverter implements NumberConverter {
             "veinticuatro", "veinticinco", "veintiséis", "veintisiete", "veintiocho", "veintinueve"
     };
 
+    /** Nombres de las decenas, indexados por la cifra de las decenas (veinte, treinta...). */
     private static final String[] TENS = {
             "", "", "veinte", "treinta", "cuarenta", "cincuenta", "sesenta", "setenta", "ochenta", "noventa"
     };
 
+    /** Nombres de las centenas. */
     private static final String[] HUNDREDS = {
             "", "ciento", "doscientos", "trescientos", "cuatrocientos", "quinientos",
             "seiscientos", "setecientos", "ochocientos", "novecientos"
@@ -114,7 +119,12 @@ public class SpanishNumberConverter implements NumberConverter {
         return unit == 0 ? TENS[ten] : TENS[ten] + " y " + UP_TO_29[unit];
     }
 
-    /** Apócope ante un multiplicador: "veintiuno mil" -> "veintiún mil", "treinta y uno" -> "treinta y un". */
+    /**
+     * Apócope ante un multiplicador: "veintiuno mil" -> "veintiún mil", "treinta y uno" -> "treinta y un".
+     *
+     * @param words número en letras que va delante del multiplicador
+     * @return el mismo texto con el apócope aplicado
+     */
     private String apocopate(String words) {
         if (words.endsWith("veintiuno")) {
             return words.substring(0, words.length() - "veintiuno".length()) + "veintiún";

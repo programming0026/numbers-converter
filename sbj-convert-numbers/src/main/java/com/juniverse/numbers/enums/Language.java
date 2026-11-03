@@ -9,6 +9,7 @@ public enum Language {
     /** Inglés (escala corta: billion = 10^9). */
     EN("en");
 
+    /** Código del idioma (ISO 639-1). */
     private final String code;
 
     Language(String code) {
@@ -19,7 +20,13 @@ public enum Language {
         return code;
     }
 
-    /** Resuelve el idioma a partir de un Locale */
+    /**
+     * Resuelve el idioma a partir de un Locale.
+     *
+     * @param locale configuración regional; solo se usa su idioma
+     * @return el idioma correspondiente
+     * @throws IllegalArgumentException si el locale es nulo o su idioma no está soportado
+     */
     public static Language from(Locale locale) {
         if (locale == null) {
             throw new IllegalArgumentException("El locale no puede ser null");

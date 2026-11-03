@@ -6,12 +6,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class EnglishNumberConverter implements NumberConverter {
+    /** Nombres de los números del 0 al 19. */
     private static final String[] UP_TO_19 = {
             "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine",
             "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen",
             "seventeen", "eighteen", "nineteen"
     };
 
+    /** Nombres de las decenas (twenty, thirty...). */
     private static final String[] TENS = {
             "", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"
     };
@@ -22,11 +24,14 @@ public class EnglishNumberConverter implements NumberConverter {
             1_000_000_000L, 1_000_000L, 1_000L
     };
 
+    /** Nombres de las escalas por grupos de tres cifras (thousand, million...). */
     private static final String[] SCALE_NAMES = {
             "quintillion", "quadrillion", "trillion", "billion", "million", "thousand"
     };
 
+    /** Valor de cada palabra simple, para convertir de letras a número. */
     private static final Map<String, Long> WORDS = new HashMap<>();
+    /** Valor de cada palabra de escala (thousand, million...). */
     private static final Map<String, Long> SCALES = new HashMap<>();
 
     static {

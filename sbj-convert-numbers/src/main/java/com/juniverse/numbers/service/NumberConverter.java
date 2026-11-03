@@ -6,7 +6,11 @@ import com.juniverse.numbers.enums.Language;
  * Cada implementación cubre un idioma y debe ser inmutable / thread-safe.
  */
 public interface NumberConverter {
-    /** Idioma que atiende esta implementación. */
+    /**
+     * Idioma que atiende esta implementación.
+     *
+     * @return el idioma del conversor
+     */
     Language language();
 
     /**

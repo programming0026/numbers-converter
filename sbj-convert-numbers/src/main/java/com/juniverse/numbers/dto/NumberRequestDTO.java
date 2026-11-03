@@ -5,7 +5,9 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 /**
- * @author ajuar
+ * Petición para convertir un número a letras.
+ *
+ * @param number número a convertir
  */
 public record NumberRequestDTO(
         @NotNull(message = "El número no puede ser nulo")

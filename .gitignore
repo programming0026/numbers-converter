@@ -1,3 +1,4 @@
+.github/
 # Java (Maven)
 target/
 dependency-reduced-pom.xml

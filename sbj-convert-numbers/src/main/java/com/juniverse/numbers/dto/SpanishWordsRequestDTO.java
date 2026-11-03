@@ -5,7 +5,9 @@ import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
 /**
- * @author ajuar
+ * Petición para convertir a número una cantidad escrita en español.
+ *
+ * @param text cantidad en letras, p. ej. {@code dos mil quinientos}
  */
 public record SpanishWordsRequestDTO(
         @NotBlank(message = "El texto no puede estar vacío")

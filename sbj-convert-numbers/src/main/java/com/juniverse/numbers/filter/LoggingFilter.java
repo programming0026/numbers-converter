@@ -42,7 +42,7 @@ public class LoggingFilter implements Filter {
      */
     private static final int LOG_QUEUE_CAPACITY = 500;
 
-    /** Bytes máximos del cuerpo de la petición que se guardan en memoria para el registro (Spring 7 exige un límite). */
+    /** Bytes máximos del cuerpo de la petición que se guardan en memoria para el registro (Spring 7 exige límite). */
     private static final int MAX_PAYLOAD_BYTES = 64 * 1024;
 
     /**

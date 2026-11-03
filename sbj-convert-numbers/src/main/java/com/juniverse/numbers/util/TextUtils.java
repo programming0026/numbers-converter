@@ -11,6 +11,9 @@ public final class TextUtils {
     /**
      * Minúsculas, sin acentos, sin signos (los guiones y comas pasan a espacio)
      * y con los espacios colapsados.
+     *
+     * @param text texto de entrada (puede ser nulo)
+     * @return el texto normalizado, o una cadena vacía si es nulo
      */
     public static String normalize(String text) {
         if (text == null) {

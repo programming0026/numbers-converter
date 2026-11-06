@@ -232,4 +232,4 @@ El texto de entrada admite hasta 300 caracteres (letras y espacios; en inglés t
 
 ## Licencia
 
-Este proyecto es **contenido premium** de Java Universe y se entrega a las personas con una membresía activa en Patreon bajo la [Licencia de uso personal de Java Universe](LICENSE), que **no es de código abierto**. Puedes estudiarlo, modificarlo y usarlo en tus propios proyectos, incluidos los comerciales y los que desarrolles para un cliente, pero **no puedes compartir, publicar ni revender el código fuente**. Las condiciones completas están en [LICENSE](LICENSE).
+Este proyecto es **libre y gratuito**, y se publica bajo la [Licencia de uso personal de Java Universe](LICENSE), que **no es de código abierto**. Puedes estudiarlo, modificarlo y usarlo en tus propios proyectos, incluidos los comerciales y los que desarrolles para un cliente, pero **no puedes compartir, publicar ni revender el código fuente**. Las condiciones completas están en [LICENSE](LICENSE).

@@ -10,13 +10,13 @@
     </parent>
     <groupId>com.juniverse.numbers</groupId>
     <artifactId>sbj-convert-numbers</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>sbj-convert-numbers</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
         <license>
-            <name>Licencia de uso personal de Java Universe 1.0 (LicenseRef-JavaUniverse-Personal-1.0)</name>
+            <name>Licencia de uso personal de Java Universe 1.1 (LicenseRef-JavaUniverse-Personal-1.1)</name>
             <distribution>manual</distribution>
             <comments>No es una licencia de código abierto. Ver el archivo LICENSE en la raíz del repositorio.</comments>
         </license>

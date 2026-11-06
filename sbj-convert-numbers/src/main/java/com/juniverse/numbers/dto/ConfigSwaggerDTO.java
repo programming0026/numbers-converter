@@ -4,7 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author linux
+ * @author Java Universe
  */
 @ConfigurationProperties(prefix = "swagger")
 @Data

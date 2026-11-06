@@ -20,7 +20,7 @@ import org.springframework.http.ResponseEntity;
  * exponen los endpoints reales con un DTO de petición validado con anotaciones propias
  * a su idioma.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @Slf4j
 public abstract class AbstractNumberConverterController {

@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 /**
  * Pruebas unitarias de {@link EnglishNumberConverter}.
  *
- * @author ajuar
+ * @author Java Universe
  */
 class EnglishNumberConverterTest {
 

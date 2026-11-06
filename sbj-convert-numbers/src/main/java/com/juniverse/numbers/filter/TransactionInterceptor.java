@@ -13,7 +13,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 /**
  * Interceptor que gestiona los identificadores de transacción en las peticiones HTTP.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @Component
 @Slf4j

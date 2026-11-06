@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Clase principal de Spring Boot del servicio que convierte números a palabras.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @SpringBootApplication
 public class SbjConvertNumbersApplication {

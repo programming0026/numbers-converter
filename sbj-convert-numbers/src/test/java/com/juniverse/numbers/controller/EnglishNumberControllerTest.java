@@ -19,7 +19,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Pruebas de integración de {@link EnglishNumberController}.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @SpringBootTest
 @AutoConfigureMockMvc

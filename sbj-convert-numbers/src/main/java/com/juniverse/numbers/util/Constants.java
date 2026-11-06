@@ -3,7 +3,7 @@ package com.juniverse.numbers.util;
 import java.util.Map;
 
 /**
- * @author linux
+ * @author Java Universe
  */
 public final class Constants {
 
@@ -53,11 +53,6 @@ public final class Constants {
     );
 
     /**
-     * Correo de contacto en Swagger.
-     */
-    public static final String SWAGGER_EMAIL = "contacto@javauniverse.dev";
-
-    /**
      * Descripción de Swagger.
      */
     public static final String SWAGGER_DESCRIPTION = "Application to convert numbers to words";
@@ -65,7 +60,7 @@ public final class Constants {
     /**
      * Nombre Swagger.
      */
-    public static final String SWAGGER_NAME = "AJO";
+    public static final String SWAGGER_NAME = "Java Universe";
 
     /**
      * URL de Swagger.

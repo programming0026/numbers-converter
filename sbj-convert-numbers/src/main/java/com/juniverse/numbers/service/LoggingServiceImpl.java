@@ -10,7 +10,7 @@ import org.springframework.util.StringUtils;
 /**
  * Implementación de LoggingService para registrar peticiones y respuestas.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @Slf4j
 public class LoggingServiceImpl implements LoggingService {

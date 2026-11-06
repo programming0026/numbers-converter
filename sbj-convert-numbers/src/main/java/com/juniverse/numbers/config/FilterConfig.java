@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * Configuración que registra los interceptores web.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @Configuration
 public class FilterConfig implements WebMvcConfigurer {

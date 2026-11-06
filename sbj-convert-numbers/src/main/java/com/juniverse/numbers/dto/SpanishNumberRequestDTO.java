@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
  * Los límites se fijan en 999,999,999,999,999 (999 mil billones) para que el multiplicador «billón»
  * multiplicador se mantenga por debajo de 1,000 y las palabras resultantes no sean ambiguas.
  *
- * @author ajuar
+ * @author Java Universe
  * @param number número
  */
 public record SpanishNumberRequestDTO(

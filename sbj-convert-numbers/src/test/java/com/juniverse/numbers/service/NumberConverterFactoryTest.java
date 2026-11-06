@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 /**
  * Pruebas unitarias de {@link NumberConverterFactory}.
  *
- * @author ajuar
+ * @author Java Universe
  */
 class NumberConverterFactoryTest {
 

@@ -30,7 +30,7 @@ import jakarta.annotation.PreDestroy;
 import org.slf4j.MDC;
 
 /**
- * @author ajuar
+ * @author Java Universe
  */
 @Component
 @Slf4j

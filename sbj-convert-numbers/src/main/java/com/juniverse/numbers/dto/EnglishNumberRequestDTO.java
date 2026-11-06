@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
  * Los límites cubren todo el rango que el convertidor en inglés puede nombrar sin ambigüedad
  * (hasta {@link Long#MAX_VALUE}, que se mantiene por debajo de 1,000 quintillones).
  *
- * @author ajuar
+ * @author Java Universe
  * @param number número
  */
 public record EnglishNumberRequestDTO(

@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * Objeto de transferencia con la información de la petición y la respuesta que se registra.
  *
- * @author ajuar
+ * @author Java Universe
  * @param method método de HTTP
  * @param path ruta de la petición
  * @param query cadena de consulta

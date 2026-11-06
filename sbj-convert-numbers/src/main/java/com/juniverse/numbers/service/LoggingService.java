@@ -5,7 +5,7 @@ import com.juniverse.numbers.dto.RequestResponseDataDTO;
 /**
  * Servicio para registrar los datos de la petición y la respuesta.
  *
- * @author ajuar
+ * @author Java Universe
  */
 public interface LoggingService {
 

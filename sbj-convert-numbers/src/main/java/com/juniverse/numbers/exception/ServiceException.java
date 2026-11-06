@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.web.server.ResponseStatusException;
 
 /**
- * @author ajuarez
+ * @author Java Universe
  */
 public class ServiceException extends ResponseStatusException {
 

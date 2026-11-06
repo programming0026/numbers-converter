@@ -13,7 +13,7 @@ import org.springframework.context.annotation.PropertySource;
 
 /**
  *
- * @author ajuar
+ * @author Java Universe
  */
 @Configuration
 @PropertySource({"classpath:application.properties"})
@@ -55,8 +55,7 @@ public class SwaggerConfig {
      */
     private Contact getContact() {
         return new Contact().name(Constants.SWAGGER_NAME)
-                .url(Constants.SWAGGER_URL)
-                .email(Constants.SWAGGER_EMAIL);
+                .url(Constants.SWAGGER_URL);
     }
 
 }

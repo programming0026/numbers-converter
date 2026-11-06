@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Expone la conversión entre números y palabras en español, con el convertidor obtenido
  * de {@link com.juniverse.numbers.service.NumberConverterFactory}.
  *
- * @author ajuar
+ * @author Java Universe
  */
 @RestController
 @RequestMapping("/v1/numbers/es")

@@ -6,7 +6,7 @@ import com.juniverse.numbers.service.LoggingService;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author ajuar
+ * @author Java Universe
  */
 @Configuration
 public class AppConfig {
